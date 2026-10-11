@@ -1,27 +1,27 @@
-# 보안 정책
+# Security Policy
 
-## 보안 문제의 비공개 처리
+## Private Handling of Security Issues
 
-취약점과 자격 증명 노출은 공개 GitHub Issue, Pull Request, 댓글로 신고하지 않습니다. 시크릿, 구독·tenant ID, 개인 리소스 식별자와 개인정보가 포함된 로그나 스크린샷도 공개하지 않습니다.
+Do not report vulnerabilities or exposed credentials in public GitHub issues, pull requests, or comments. Do not publish logs or screenshots containing secrets, subscription or tenant IDs, personal resource identifiers, or personal information.
 
-## 이 저장소의 비공개 신고 창구
+## Private Reporting Channel
 
-<!-- TODO: 게시 전에 유지보수자가 실제 수신할 비공개 연락처 또는 활성화된 GitHub 비공개 취약점 신고 링크를 작성합니다. 현재 저장소의 비공개 취약점 신고 기능은 비활성화돼 있습니다. -->
+<!-- TODO: Before publication, maintainers must provide a monitored private contact method or enable and link to GitHub private vulnerability reporting. Private vulnerability reporting is currently disabled for this repository. -->
 
-## 신고에 포함할 정보
+## Information to Include
 
-비공개 신고에는 문제를 확인하고 재현하는 데 필요한 정보를 포함합니다.
+Include enough information in a private report to identify and reproduce the issue:
 
-- 영향을 받는 랩·단계와 파일 경로
-- 해당 branch, tag 또는 commit
-- 문제를 재현하는 설정과 절차
-- 예상 결과와 실제 결과
-- 문제의 영향과 민감한 값을 제거한 증빙
+- The affected lab, step, and file path
+- The relevant branch, tag, or commit
+- The configuration and steps required to reproduce the issue
+- The expected and actual results
+- The potential impact and supporting evidence with sensitive values removed
 
-이미 노출된 자격 증명은 게시물에서 삭제하는 것만으로 안전해지지 않습니다. 해당 자격 증명의 소유자는 폐기·재발급하고 사용 내역을 확인해야 합니다.
+Deleting an exposed credential from a post does not make it secure. The credential owner must revoke or rotate it and review its usage history.
 
-## Microsoft 제품과 서비스의 취약점
+## Vulnerabilities in Microsoft Products and Services
 
-Azure 등 Microsoft 제품이나 서비스 자체의 취약점은 [Microsoft의 보안 취약점 정의](https://aka.ms/security.md/definition)를 확인한 뒤 [Microsoft Security Response Center 신고 절차](https://aka.ms/security.md/msrc/create-report)를 따릅니다.
+For vulnerabilities in Microsoft products or services, including Azure, review [Microsoft's definition of a security vulnerability](https://aka.ms/security.md/definition) and follow the [Microsoft Security Response Center reporting process](https://aka.ms/security.md/msrc/create-report).
 
-MSRC 안내는 Microsoft 제품·서비스의 취약점을 위한 것이며, 이 개인 저장소의 워크샵 문서나 실습 설정 문제를 접수하는 창구를 대신하지 않습니다.
+MSRC handles vulnerabilities in Microsoft products and services. It is not a reporting channel for workshop documentation or lab configuration issues in this repository.

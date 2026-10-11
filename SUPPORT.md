@@ -1,21 +1,21 @@
-# 지원 안내
+# Support
 
-## 문서 오류와 개선 제안
+## Documentation Issues and Improvements
 
-현재 [이 저장소](https://github.com/Azure-Samples/AzureLandingZoneWorkshop)는 GitHub Issues를 사용하지 않습니다. 문서 오류를 수정하거나 내용을 개선하려면 기존 [Pull Request](https://github.com/Azure-Samples/AzureLandingZoneWorkshop/pulls)를 확인하고, 관련 변경을 Pull Request로 제안합니다.
+[This repository](https://github.com/Azure-Samples/AzureLandingZoneWorkshop) does not currently use GitHub Issues. To correct a documentation error or improve the content, review the existing [pull requests](https://github.com/Azure-Samples/AzureLandingZoneWorkshop/pulls) and propose the relevant change in a pull request.
 
-변경 설명에는 해당 랩·단계와 수정 이유를 적습니다. 실습 오류를 재현했다면 브라우저·VM 이미지 등 실행 환경, 예상 결과와 실제 결과도 함께 설명합니다. 로그와 스크린샷에서 자격 증명, 구독·tenant ID, 개인 리소스 식별자와 개인정보를 제거합니다.
+Describe the affected lab or step and explain the reason for the change. If you reproduced a lab error, include the execution environment, such as the browser and VM image, along with the expected and actual results. Remove credentials, subscription or tenant IDs, personal resource identifiers, and personal information from logs and screenshots.
 
-## 워크샵 문의 창구
+## Workshop Support Channel
 
-<!-- TODO: 게시 전에 유지보수자가 실제 운영할 워크샵 문의 창구와 지원 범위를 확인해 작성합니다. AzureBasicWorkshop의 issue tracker를 이 저장소의 문의 창구로 사용하지 않습니다. -->
+<!-- TODO: Before publication, maintainers must provide a monitored workshop support channel and define its scope. Do not use the AzureBasicWorkshop issue tracker as the support channel for this repository. -->
 
-## Azure 서비스 지원
+## Azure Service Support
 
-Azure 서비스의 장애나 구독·청구 문제는 [Azure 공식 지원 안내](https://azure.microsoft.com/support/)를 확인하고 해당 계정의 지원 경로를 사용합니다. 기술 지원 범위와 비용은 지원 플랜에 따라 달라집니다.
+For Azure service outages or subscription and billing issues, review the [official Azure support options](https://azure.microsoft.com/support/) and use the support channel available for the affected account. Technical support coverage and costs depend on the support plan.
 
-이 워크샵 문서는 Microsoft Customer Service & Support(CSS)의 지원 계약이나 유지보수자의 응답 기한을 보장하지 않습니다.
+This workshop documentation does not provide a Microsoft Customer Service & Support (CSS) agreement or guarantee a response time from the maintainers.
 
-## 보안 문제
+## Security Issues
 
-취약점과 자격 증명 노출은 [보안 정책](SECURITY.md)을 따릅니다. 공개 Pull Request나 댓글로 민감한 정보를 공유하지 않습니다.
+Follow the [Security Policy](SECURITY.md) when reporting vulnerabilities or exposed credentials. Do not share sensitive information in public pull requests or comments.
