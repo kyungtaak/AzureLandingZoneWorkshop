@@ -170,4 +170,4 @@ Nginx 페이지 표시만으로 Firewall 경유까지 입증되지는 않습니�
 
 ## 라이선스
 
-이 워크샵의 코드와 문서는 모두 MIT License를 따릅니다. [코드 라이선스](LICENSE)와 [문서 라이선스](LICENSE-DOCS)에서 같은 MIT 조건을 확인할 수 있습니다.
+이 워크샵의 코드와 문서는 모두 [MIT License](LICENSE.md)를 따릅니다.
