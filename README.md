@@ -87,10 +87,10 @@ Application Gateway capacity unit(0.0144 USD/CU·시간), 적용되는 Firewall 
 
 | 순서 | 랩 | 내용 | 소요 시간 |
 |---|---|---|---|
-| 1 | [네트워크 리소스 배포](01-network-resource-deployment/README.md) | 리소스 그룹, Azure Virtual WAN, 허브·스포크 네트워크 구성 | 40분(추정) |
-| 2 | [보안 리소스 배포](02-security-resource-deployment/README.md) | Application Gateway WAF와 Azure Firewall 배포 | 55분(추정) |
-| 3 | [테스트 시스템 배포](03-test-system-deployment/README.md) | 백엔드 가상 머신과 Nginx 구성 | 30분(추정) |
-| 4 | [네트워크 연결 확인](04-network-connectivity-check/README.md) | 연결, 방화벽 규칙, 경로 테이블 구성과 테스트 | 50분(추정) |
+| 1 | [네트워크 리소스 배포](01-network-resource-deployment/README.md) | 리소스 그룹, Azure Virtual WAN, 허브·스포크 네트워크 구성 | 40분 |
+| 2 | [보안 리소스 배포](02-security-resource-deployment/README.md) | Application Gateway WAF와 Azure Firewall 배포 | 55분 |
+| 3 | [테스트 시스템 배포](03-test-system-deployment/README.md) | 백엔드 가상 머신과 Nginx 구성 | 30분 |
+| 4 | [네트워크 연결 확인](04-network-connectivity-check/README.md) | 연결, 방화벽 규칙, 경로 테이블 구성과 테스트 | 50분 |
 
 [첫 랩 시작](01-network-resource-deployment/README.md)
 
