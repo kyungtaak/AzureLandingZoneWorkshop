@@ -72,7 +72,7 @@ Application Gateway capacity unit(0.0144 USD/CU·시간), 적용되는 Firewall 
 
 ## 소요 시간
 
-총 240분(4시간)입니다. 전체 시간은 제공된 워크샵 소개를 기준으로 하며, 아래 세부 시간은 강의와 배포 대기를 고려한 **운영 추정값**입니다. E2E에서 측정한 시간이 아니므로 리허설 후 조정합니다.
+총 240분(4시간)입니다. 세부 시간은 강의와 배포 대기를 포함한 **예상 소요 시간**이며, 실습 진행 속도에 따라 달라집니다.
 
 | 세션 | 내용 | 계획 시간 |
 |---|---|---|
@@ -100,11 +100,15 @@ Application Gateway capacity unit(0.0144 USD/CU·시간), 적용되는 Firewall 
 
 ## 검증
 
-마지막 랩에서 Application Gateway의 공용 IP로 접속해 Nginx 기본 페이지가 표시되는지 확인합니다. `validated_on`은 저자가 전체 실습을 처음부터 끝까지 완료한 뒤 기록합니다.
+마지막 랩에서 다음 항목을 확인합니다.
+
+1. Application Gateway의 Backend health가 **Healthy**인지 확인합니다.
+2. Application Gateway의 공용 IP로 접속해 Nginx 기본 페이지가 표시되는지 확인합니다.
+3. NIC의 유효 경로와 Firewall 규칙 또는 진단 로그를 확인해 트래픽이 의도한 Firewall 경유 경로를 사용하는지 점검합니다.
 
 ## 정리 (Clean-up)
 
-실습이 모두 끝난 뒤 사람이 Azure Portal에서 수행합니다. 아래는 공식 삭제 문서를 바탕으로 작성한 절차이며, 이 워크샵 구성에서 실행 검증한 결과는 아닙니다.
+실습을 마치면 아래 순서로 Azure Portal에서 리소스를 삭제하고, 비용이 계속 발생하는 리소스가 남지 않았는지 확인합니다.
 
 ### 삭제 전 확인
 
@@ -138,25 +142,25 @@ Virtual WAN 리소스 삭제는 약 30분이 걸릴 수 있으며 환경에 따�
 
 ## 트러블슈팅
 
-<!-- TODO: 실제 E2E 검증에서 확인한 오류와 해결 방법을 저자가 작성 -->
+### 배포 설정 점검
 
-### 공식 문서 기반 점검과 실행 검증의 구분
+Portal에서 다음 설정을 확인합니다. 메뉴 이름과 선택 가능한 옵션은 Portal 언어, 구독과 리전에 따라 달라질 수 있습니다. 스크린샷보다 실제 설정값을 기준으로 진행합니다.
 
-2026-10-11에 공식 문서와 대조한 결과는 아래와 같습니다. 로그인한 Azure Portal 화면이나 실제 배포 결과를 확인한 것은 아닙니다. 기존 스크린샷은 실행 재검증 전 참고 자료로 사용합니다.
-
-| 항목 | 문서 대조 결과 | 실제 Portal에서 확인할 내용 |
+| 항목 | 설정 기준 | 점검 내용 |
 |---|---|---|
-| Virtual hub 용량 | 기본 2 routing infrastructure units, 3 Gbps, VM 2,000대 지원이 공식 문서와 일치 | 생성 화면, 라우터 준비 상태와 연결 활성화 시점 |
-| Application Gateway | 프런트엔드·백엔드·라우팅 규칙 순서와 최소 0에서도 과금되는 구조 확인 | WAF v2·가용 영역·backend settings 선택과 배포 성공 |
-| VM 이미지와 인증 | 현재 Linux quickstart 예시는 Ubuntu 22.04 LTS Gen2와 SSH 공개 키 인증 | 기존 20.04 이미지·암호 인증·D2s_v3의 구독별 사용 가능 여부 |
-| Firewall와 WAF | 서비스 구성은 공식 문서로 비교 가능 | Premium SKU, 정책 SKU 일치, WAF 방지 모드와 bot rule set 선택 |
-| 연결 테스트 | Backend health 공식 진단 방법 확인 | Healthy 상태, 실제 HTTP 응답, Firewall 경유 경로 증빙 |
+| Virtual hub 용량 | 기본 2 routing infrastructure units, 3 Gbps, VM 2,000대 지원 | 라우터 준비 상태와 연결 활성화 여부 |
+| Application Gateway | WAF v2, 공용 프런트엔드, HTTP 80번 포트, backend pool | 가용 영역, backend settings, 배포 성공 여부 |
+| VM 이미지와 인증 | 실습은 Ubuntu 20.04와 암호 인증 사용, 공식 Linux quickstart는 Ubuntu 22.04 Gen2와 SSH 공개 키 인증 예시 제공 | 실습 이미지·인증 형식·D2s_v3의 구독별 사용 가능 여부 |
+| Firewall와 WAF | Firewall Premium과 WAF 정책 구성 | Firewall과 정책의 SKU 일치, WAF 방지 모드, bot rule set 선택 |
+| 연결 테스트 | Backend health와 HTTP 응답 확인 | Healthy 상태, Nginx 응답, Firewall 경유 경로 |
 
-Backend health가 Unhealthy이거나 HTTP 502가 발생하면 [공식 진단 문서](https://learn.microsoft.com/en-us/troubleshoot/azure/application-gateway/application-gateway-backend-health-troubleshooting)를 참고해 Nginx 상태, backend IP·포트, health probe, NSG와 UDR을 점검합니다. 이는 사전 점검 안내이며 이 워크샵에서 재현한 오류 기록이 아닙니다.
+### Backend health와 HTTP 502 점검
 
-Nginx 페이지 표시만으로 Firewall 경유까지 입증되지는 않습니다. E2E에서는 NIC의 유효 경로, Firewall 규칙 또는 진단 로그를 함께 확인합니다. 진단 로그를 추가하면 비용과 개인정보 노출을 별도로 검토해야 합니다.
+Backend health가 Unhealthy이거나 HTTP 502가 발생하면 [공식 진단 문서](https://learn.microsoft.com/en-us/troubleshoot/azure/application-gateway/application-gateway-backend-health-troubleshooting)를 참고해 Nginx 상태, backend IP·포트, health probe, NSG와 UDR을 점검합니다.
 
-대조 근거: [Virtual hub 설정](https://learn.microsoft.com/en-us/azure/virtual-wan/hub-settings), [Application Gateway Portal quickstart](https://learn.microsoft.com/en-us/azure/application-gateway/quick-create-portal), [Linux VM Portal quickstart](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal), [Firewall Portal tutorial](https://learn.microsoft.com/en-us/azure/firewall/tutorial-firewall-deploy-portal).
+Nginx 페이지 표시만으로 Firewall 경유까지 입증되지는 않습니다. NIC의 유효 경로, Firewall 규칙 또는 진단 로그를 함께 확인합니다. 진단 로그를 추가하면 비용과 개인정보 노출을 별도로 검토해야 합니다.
+
+참고: [Virtual hub 설정](https://learn.microsoft.com/en-us/azure/virtual-wan/hub-settings), [Application Gateway Portal quickstart](https://learn.microsoft.com/en-us/azure/application-gateway/quick-create-portal), [Linux VM Portal quickstart](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal), [Firewall Portal tutorial](https://learn.microsoft.com/en-us/azure/firewall/tutorial-firewall-deploy-portal).
 
 ## 라이선스
 

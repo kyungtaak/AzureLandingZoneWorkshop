@@ -20,7 +20,7 @@ Application Gateway WAF와 Azure Firewall을 배포하고 WAF 정책과 Firewall
 
 ## 소요 시간
 
-약 55분(운영 추정)입니다. Application Gateway와 Firewall 구성, 배포 대기, 정책 확인을 포함합니다. 실제 배포 속도에 따라 늘어날 수 있으며 E2E 실측값은 아닙니다.
+예상 소요 시간은 약 55분입니다. Application Gateway와 Firewall 구성, 배포 대기, 정책 확인을 포함하며 배포 속도에 따라 늘어날 수 있습니다.
 
 ## 실습 단계
 
@@ -122,7 +122,7 @@ Azure Portal에서 `appGW`, `waf-default-policy`, `default-firewall`, `default-f
 
 ## 트러블슈팅
 
-<!-- TODO: E2E 검증에서 확인한 오류와 해결 방법을 저자가 작성 -->
+[워크샵 배포 설정 점검](../README.md#배포-설정-점검)에서 Application Gateway, Firewall와 정책 설정을 확인합니다.
 
 ## 이전·다음
 
