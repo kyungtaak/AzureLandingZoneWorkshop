@@ -1,6 +1,6 @@
 ---
 title: 02. 보안 리소스 배포
-duration_minutes:
+duration_minutes: 55
 last_updated: 2026-10-11
 ---
 
@@ -16,9 +16,11 @@ Application Gateway WAF와 Azure Firewall을 배포하고 WAF 정책과 Firewall
 
 [01. 네트워크 리소스 배포](../01-network-resource-deployment/README.md)를 완료해야 합니다.
 
+[워크샵 권한과 예상 비용](../README.md#사전-요구사항)을 확인합니다. 동일한 실습 그룹의 Contributor 권한으로 진행하며, 이 랩의 Firewall Premium과 Application Gateway WAF v2는 트래픽이 없어도 기본 요금이 발생합니다.
+
 ## 소요 시간
 
-<!-- TODO: 실제 실습 기준 소요 시간을 확인 -->
+약 55분(운영 추정)입니다. Application Gateway와 Firewall 구성, 배포 대기, 정책 확인을 포함합니다. 실제 배포 속도에 따라 늘어날 수 있으며 E2E 실측값은 아닙니다.
 
 ## 실습 단계
 
@@ -116,7 +118,7 @@ Azure Portal에서 `appGW`, `waf-default-policy`, `default-firewall`, `default-f
 
 ## 정리 (Clean-up)
 
-<!-- TODO: 이 랩에서 생성한 리소스의 삭제 순서와 비용 중단 확인 방법을 저자가 작성 -->
+계속 진행한다면 보안 리소스를 유지합니다. 실습을 중단하거나 전체 실습을 완료하면 [워크샵 정리 절차](../README.md#정리-clean-up)를 수행합니다. 개별 삭제가 필요할 때는 `appGW`, `default-firewall`을 먼저 삭제하고, 다른 참조가 없는 `waf-default-policy`, `default-fw-policy`, `appgwPIP`, `FWPIP`를 뒤에 삭제합니다. Gateway의 최소 인스턴스 수를 0으로 바꾸는 것은 정리를 대신하지 않습니다.
 
 ## 트러블슈팅
 

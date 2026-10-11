@@ -1,6 +1,6 @@
 ---
 title: 03. 테스트 시스템 배포
-duration_minutes:
+duration_minutes: 30
 last_updated: 2026-10-11
 ---
 
@@ -16,9 +16,11 @@ last_updated: 2026-10-11
 
 [02. 보안 리소스 배포](../02-security-resource-deployment/README.md)를 완료해야 합니다.
 
+[워크샵 사전 요구사항](../README.md#사전-요구사항)의 VM 할당량, SKU·이미지 사용 가능 여부와 SSH 연결 조건을 확인합니다. 동일 실습 그룹의 Contributor 권한으로 진행합니다.
+
 ## 소요 시간
 
-<!-- TODO: 실제 실습 기준 소요 시간을 확인 -->
+약 30분(운영 추정)입니다. VM 배포, SSH 접속과 Nginx 설치를 포함하며 E2E 실측값은 아닙니다.
 
 ## 실습 단계
 
@@ -79,7 +81,7 @@ last_updated: 2026-10-11
 
 ## 정리 (Clean-up)
 
-<!-- TODO: 최종 연결 테스트 후 가상 머신, 디스크, NIC, 공용 IP의 삭제 순서를 저자가 작성 -->
+마지막 랩에서 `backend-vm`을 사용하므로 연결 테스트 전에는 삭제하지 않습니다. 종료 시 [워크샵 정리 절차](../README.md#정리-clean-up)를 따릅니다. 개별 삭제라면 VM을 먼저 삭제한 뒤 디스크, NIC, `backend-vm-ip`, VM 전용 NSG의 잔존 여부를 확인합니다. VM 삭제 화면의 동반 삭제 선택에 따라 이 자산들이 남을 수 있으며, 단순 중지나 할당 해제는 전체 비용 중단을 보장하지 않습니다.
 
 ## 트러블슈팅
 
