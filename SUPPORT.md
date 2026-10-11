@@ -2,7 +2,7 @@
 
 ## 문서 오류와 개선 제안
 
-현재 [이 저장소](https://github.com/kyungtaak/AzureLandingZoneWorkshop)는 GitHub Issues를 사용하지 않습니다. 문서 오류를 수정하거나 내용을 개선하려면 기존 [Pull Request](https://github.com/kyungtaak/AzureLandingZoneWorkshop/pulls)를 확인하고, 관련 변경을 Pull Request로 제안합니다.
+현재 [이 저장소](https://github.com/Azure-Samples/AzureLandingZoneWorkshop)는 GitHub Issues를 사용하지 않습니다. 문서 오류를 수정하거나 내용을 개선하려면 기존 [Pull Request](https://github.com/Azure-Samples/AzureLandingZoneWorkshop/pulls)를 확인하고, 관련 변경을 Pull Request로 제안합니다.
 
 변경 설명에는 해당 랩·단계와 수정 이유를 적습니다. 실습 오류를 재현했다면 브라우저·VM 이미지 등 실행 환경, 예상 결과와 실제 결과도 함께 설명합니다. 로그와 스크린샷에서 자격 증명, 구독·tenant ID, 개인 리소스 식별자와 개인정보를 제거합니다.
 
