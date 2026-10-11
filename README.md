@@ -162,6 +162,12 @@ Nginx 페이지 표시만으로 Firewall 경유까지 입증되지는 않습니�
 
 참고: [Virtual hub 설정](https://learn.microsoft.com/en-us/azure/virtual-wan/hub-settings), [Application Gateway Portal quickstart](https://learn.microsoft.com/en-us/azure/application-gateway/quick-create-portal), [Linux VM Portal quickstart](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal), [Firewall Portal tutorial](https://learn.microsoft.com/en-us/azure/firewall/tutorial-firewall-deploy-portal).
 
+## 프로젝트 안내
+
+- [보안 정책](SECURITY.md)
+- [행동강령](CODE_OF_CONDUCT.md)
+- [지원 안내](SUPPORT.md)
+
 ## 라이선스
 
-이 워크샵의 코드와 문서는 [MIT License](LICENSE)를 따릅니다.
+이 워크샵의 코드와 문서는 모두 MIT License를 따릅니다. [코드 라이선스](LICENSE)와 [문서 라이선스](LICENSE-DOCS)에서 같은 MIT 조건을 확인할 수 있습니다.
